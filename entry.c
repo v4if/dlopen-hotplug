@@ -1,8 +1,8 @@
 /*
 * @Author: v4if
 * @Date:   2016-11-15 21:45:46
-* @Last Modified by:   root
-* @Last Modified time: 2016-11-16 12:31:43
+* @Last Modified by:   v4if
+* @Last Modified time: 2016-11-26 16:18:37
 */
 
 #include <stdio.h>
@@ -99,8 +99,7 @@ void fill_envent_map(EventMap *head) {
 		strncpy(head[no].method, buff, 128);
 
 		// skip white
-		while((ch = fgetc(fin)) && (ch == '\n' || ch == '\t' || ch == ' '));
-		ungetc(ch, fin);
+		while((ch = fgetc(fin)) && (ch != '\n'));
 		no++;
 	}
 	fclose(fin);
